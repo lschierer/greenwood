@@ -1,0 +1,38 @@
+{
+  "name": "@greenwood/plugin-json-source",
+  "version": "0.30.2",
+  "description": "A Greenwood plugin for using building Pages from local JSON files.",
+  "repository": "https://github.com/ProjectEvergreen/greenwood",
+  "homepage": "https://github.com/ProjectEvergreen/greenwood/tree/master/packages/plugin-json-source",
+  "contributors": [
+    "Owen Buckley <owen@thegreenhouse.io>",
+    "Luke Schierer <luke@schierer.org>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Greenwood",
+    "Static Site Generator",
+    "Server Side Rendering",
+    "Full Stack Web Development",
+    "Serverless",
+    "Web Components",
+    "TypeScript"
+  ],
+  "main": "src/index.js",
+  "type": "module",
+  "files": [
+    "src/"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@greenwood/cli": "^0.30.0"
+  },
+  "dependencies": {
+    "typescript": "^5.1.6"
+  },
+  "devDependencies": {
+    "@greenwood/cli": "^0.30.2"
+  }
+}
