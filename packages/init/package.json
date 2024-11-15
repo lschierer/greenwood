@@ -1,6 +1,6 @@
 {
   "name": "@greenwood/init",
-  "version": "0.30.0",
+  "version": "0.30.2",
   "description": "A package for scaffolding a new Greenwood project.",
   "repository": "https://github.com/ProjectEvergreen/greenwood",
   "homepage": "https://github.com/ProjectEvergreen/greenwood/tree/master/packages/init",
@@ -10,11 +10,16 @@
   "type": "module",
   "keywords": [
     "Greenwood",
+    "Scaffolding",
     "Static Site Generator",
+    "Server Side Rendering",
     "Full Stack Web Development",
+    "Serverless",
     "Web Components",
-    "NodeJS",
-    "Scaffolding"
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "NodeJS"
   ],
   "bin": {
     "init": "./src/index.js"

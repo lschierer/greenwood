@@ -1,6 +1,6 @@
 {
   "name": "@greenwood/plugin-adapter-vercel",
-  "version": "0.30.0",
+  "version": "0.30.2",
   "description": "A Greenwood plugin for supporting Vercel serverless and edge runtimes.",
   "repository": "https://github.com/ProjectEvergreen/greenwood",
   "homepage": "https://github.com/ProjectEvergreen/greenwood/tree/master/packages/plugin-adapter-vercel",
@@ -9,10 +9,11 @@
   "keywords": [
     "Greenwood",
     "Static Site Generator",
-    "SSR",
+    "Server Side Rendering",
     "Full Stack Web Development",
-    "Vercel",
     "Serverless",
+    "Web Components",
+    "Vercel",
     "Edge"
   ],
   "main": "src/index.js",
@@ -24,9 +25,9 @@
     "access": "public"
   },
   "peerDependencies": {
-    "@greenwood/cli": "^0.28.0"
+    "@greenwood/cli": "^0.30.0"
   },
   "devDependencies": {
-    "@greenwood/cli": "^0.30.0"
+    "@greenwood/cli": "^0.30.2"
   }
 }
