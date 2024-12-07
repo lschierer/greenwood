@@ -114,9 +114,13 @@ describe('Build Greenwood With: ', function() {
         `${process.cwd()}/node_modules/@lit/reactive-element/package.json`,
         `${outputPath}/node_modules/@lit/reactive-element/`
       );
-      const reduxLibs = await getDependencyFiles(
-        `${process.cwd()}/node_modules/redux/es/redux.mjs`,
-        `${outputPath}/node_modules/redux/es`
+      const reduxDist = await getDependencyFiles(
+        `${process.cwd()}/node_modules/redux/dist/*.js`,
+        `${outputPath}/node_modules/redux/dist/`
+      );
+      const reduxDistMjs = await getDependencyFiles(
+        `${process.cwd()}/node_modules/redux/dist/*.mjs`,
+        `${outputPath}/node_modules/redux/dist/`
       );
       const reduxPackageJson = await getDependencyFiles(
         `${process.cwd()}/node_modules/redux/package.json`,
@@ -181,7 +185,8 @@ describe('Build Greenwood With: ', function() {
 
       runner.setup(outputPath, [
         ...getSetupFiles(outputPath),
-        ...reduxLibs,
+        ...reduxDist,
+        ...reduxDistMjs,
         ...reduxPackageJson,
         ...looseLibs,
         ...looseLibsPackageJson,
@@ -275,7 +280,7 @@ describe('Build Greenwood With: ', function() {
         const reduxOutput = dom.window.document.querySelectorAll('body > .output-redux');
 
         expect(reduxOutput.length).to.be.equal(1);
-        expect(reduxOutput[0].textContent).to.be.equal('import from redux ZnVuY3Rpb24gbyh0');
+        expect(reduxOutput[0].textContent).to.be.equal('import from redux ZnVuY3Rpb24gY3Jl');
       });
 
       it('should have the expected output from the first inline <script> tag in the page output', async function() {
@@ -297,7 +302,7 @@ describe('Build Greenwood With: ', function() {
 
         expect(inlineScriptTag.textContent.replace('\n', '')).to
           // eslint-disable-next-line max-len
-          .contain('import"/lit-element.6eb76f27.js";document.getElementsByClassName("output-script-inline")[0].innerHTML="script tag module inline";//# sourceMappingURL=1635690801.4bc08000.js.map');
+          .contain('import"/lit-element.5o_Y6C1Q.js";document.getElementsByClassName("output-script-inline")[0].innerHTML="script tag module inline";//# sourceMappingURL=1635690801.CKFVi45M.js.map');
       });
 
       it('should have prerendered content from <app-header> component', function() {
