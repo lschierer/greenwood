@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "declaration": true, // Generate .d.ts files
+    "outDir": "../types", // Output directory for compiled files
+    "target": "ES6", // Target ES6 or higher for better async/await support
+    "module": "ESNext",
+    "moduleResolution": "bundler", // Resolve modules like Node.js
+    "esModuleInterop": true, // Allow CommonJS-style imports
+    "skipLibCheck": true, // Skip library check for faster compilation
+    "noEmit": true
+  },
+  "include": ["./*.ts"], // Include your source files and the types definition file
+  "exclude": ["node_modules"] // Exclude node_modules
+}

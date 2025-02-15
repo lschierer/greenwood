@@ -24,6 +24,7 @@
     "test:loaders": "cross-env BROWSERSLIST_IGNORE_OLD_DATA=true __GWD_ROLLUP_MODE__=strict NODE_NO_WARNINGS=1 node --loader $(pwd)/test/test-loader.js ./node_modules/mocha/bin/mocha \"./packages/**/**/*.spec.js\"",
     "test:loaders:win": "cross-env BROWSERSLIST_IGNORE_OLD_DATA=true __GWD_ROLLUP_MODE__=strict NODE_NO_WARNINGS=1 node --loader file:\\\\%cd%\\test\\test-loader.js ./node_modules/mocha/bin/mocha --exclude \"./packages/init/test/cases/**\" \"./packages/**/**/*.spec.js\"",
     "test:tdd": "yarn test --watch",
+    "generateTypes": "tsx --tsconfig ./packages/cli/src/schemas/tsconfig.json ./packages/cli/src/schemas/generateDeclarations.ts",
     "lint:js": "eslint \"*.js\" \"./packages/**/**/*.js\" \"./test/*.js\" \"./www/**/**/*.js\"",
     "lint:ts": "eslint \"./packages/**/**/*.ts\"",
     "lint:css": "stylelint \"./www/**/*.js\", \"./www/**/*.css\"",
@@ -34,12 +35,14 @@
     "@babel/eslint-parser": "^7.24.1",
     "@babel/plugin-syntax-import-assertions": "^7.24.1",
     "@babel/preset-react": "^7.24.1",
+    "@eslint/js": "^9.20.0",
     "@ls-lint/ls-lint": "^1.10.0",
+    "@typescript-eslint/parser": "^8.24.0",
     "babel-eslint": "^10.1.0",
     "c8": "^7.10.0",
     "chai": "^4.2.0",
     "cross-env": "^7.0.3",
-    "eslint": "^8.51.0",
+    "eslint": "^9.20.1",
     "eslint-plugin-markdown": "^3.0.0",
     "eslint-plugin-no-only-tests": "^2.6.0",
     "gallinago": "^0.8.2",
@@ -50,6 +53,11 @@
     "rimraf": "^2.6.3",
     "stylelint": "^13.8.0",
     "stylelint-a11y": "^1.2.3",
-    "stylelint-config-standard": "^20.0.0"
+    "stylelint-config-standard": "^20.0.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.24.0",
+    "zod": "^3.24.2",
+    "zod-to-ts": "^1.2.0"
   }
 }
