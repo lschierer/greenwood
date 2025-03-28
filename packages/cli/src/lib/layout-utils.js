@@ -1,3 +1,4 @@
+// @ts-nocheck
 import fs from "fs/promises";
 import htmlparser from "node-html-parser";
 import { checkResourceExists } from "./resource-utils.js";
@@ -158,7 +159,7 @@ async function getAppLayout(pageLayoutContents, compilation, customImports = [],
 
   let appLayoutContents =
     customAppLayoutsFromPlugins.length > 0
-      ? await fs.readFile(new URL("./app.html", customAppLayoutsFromPlugins[0]))
+      ? await fs.readFile(new URL("./app.html", customAppLayoutsFromPlugins[0]), "utf-8")
       : userHasStaticAppLayout
         ? await fs.readFile(userStaticAppLayoutUrl, "utf-8")
         : userHasDynamicAppLayout
@@ -293,9 +294,9 @@ async function getAppLayout(pageLayoutContents, compilation, customImports = [],
       ...(
         await asyncFilter(customImports, async (resource) => {
           const [src] = resource.split(" ");
-          const isJavaScriptFile = src.split(" ")[0].split(".").pop() === "js";
+          const isSupportedScript = ["js", "ts"].includes(src.split(" ")[0].split(".").pop());
 
-          if (isJavaScriptFile) {
+          if (isSupportedScript) {
             return true;
           }
 
